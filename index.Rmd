@@ -1,0 +1,27 @@
+--- 
+title: "Probabilidade e Estatística"
+author: "Paulo de Souza"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Informações Gerais {-}
+
+## Sobre o Livro {-}
+Este livro, é apenas um resumo baseado em anotações do autor, com o que diz respeito ao estudo de temas referentes a **probabilidade** e **estatística**.  
+
+## Uso {-}
+O livro pode ser usado pelos entusiastas nos assuntos supracitados.
+
+
+

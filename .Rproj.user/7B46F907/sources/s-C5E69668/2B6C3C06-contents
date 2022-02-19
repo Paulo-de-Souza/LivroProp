@@ -1,0 +1,234 @@
+# Dois Grupos Independentes e Não-Paramétricos
+
+## Qui-Quadrado 
+
+## U de Mann Whitney
+O teste de **U de Mann Whitney**, também conhecido como **Soma do Posto de Wilcoxon** é utilizado na comparação de dois grupos amostrais que tenham preferencialmente o mesmo tamanho.
+
+O método funciona com os seguintes passos:  
+
+1. Coloca-se em ordem crescente todos os dados;
+2. Calcula-se o **posto** referente a cada um dos valores;
+3. Atribui-se este posto a cada um dos valores na amostra original;
+4. Soma-se o posto de cada uma das duas amostras;
+5. Calcula-se o valor \(U_1\) e \(U_2\), e toma-se \(U = \min(U_1,U_2)\). Define-se as sequintes equações \@ref(eq:U1) e \@ref(eq:U2) para o cálculo de \(U_1\) e \(U_2\):  
+
+\begin{equation}
+  U_1 = n_1 n_2 + \frac{n_1(n_1+1)}{2} - R_1 
+  (\#eq:U1)
+\end{equation}  
+
+\begin{equation}
+U_2 = n_1 n_2 + \frac{n_2(n_2+1)}{2} - R_2
+(\#eq:U2)
+\end{equation}  
+
+>Caso a quantidade de valores coletados seja menor que 20, isto é, a soma de \(n_1\) e \(n_2\) sejam menores que 20, deve ser feito o comparativo do valor de \(U_{calculado}\) com o valor de \(U_{tabelado}\), consultar a tabela **Valores Críticos U de Mann-Whitney**^[[Tabela de Mann Whitney](https://ocw.umb.edu/psychology/psych-270/other-materials/RelativeResourceManager.pdf)].  
+Se a população for maior que 20, é necessário usar a **tabela z-normal**; nesta ocasião é efetuado mais um passo, que é o cálculo de z.
+
+6. O calculo de \(z\) é dado por:
+\begin{equation}
+z = \frac{U - \mu_R}{\sigma_R}
+(\#eq:zMannWhitney)
+\end{equation}
+em que 
+$$ 
+\mu_R = \frac{n_1 \cdot n_2}{2} \hspace{2cm} \sigma_R = \sqrt{\frac{n_1 \cdot n_2(n_1 + n_2 + 1)}{12}}
+$$
+
+Vamos resolver um exemplo, para que fique mais clara a aplicação do método.
+
+---------------------------  
+
+::: {.example}
+  Na investigação da eficiência de um novo remédio para asma, um grupo de 10 pacientes aleatórios são submetidos ao teste, sendo metade utilizando o novo remédio e a outra parte um placebo. Após uma semana os mesmos são questionados sobre a quantidade de crises que tiveram durante o período, os dados são apresentados na sequência.  
+  
+| **Placebo** | **Novo Remédio** |
+|:-----------:|:----------------:|
+|      7      |         3        |
+|      5      |         6        |
+|      6      |         4        |
+|      4      |         2        |
+|      12     |         1        |  
+
+
+Tome um nível de \(5\%\) de significancia para o teste e as seguintes hipóteses nula e alternativa  
+\(H_0\): A duas populações são iguais  
+\(H_1\): A duas populações não são iguais.  
+
+**Resolução** Vamos tomar como **Pl** a coluna do **Placebo** e **NR** a coluna do **Novo Remédio**, então $n_{Pl} = 5$ e $n_{NR} = 5$;  seguindo o passo a passo do método, iremos primeiro colocar todos os dados em ordem crescente, então fazemos:  
+
+**Passo 1**  Colocando todos os dados em ordem crescente
+
+
+| # ordem | 1 | 2 | 3 | 4 | 4 | 5 | 6 | 6 | 7 | 12 |
+|:-------:|---|---|---|---|---|---|---|---|---|----|
+
+**Passo 2** Deve ser calculado o posto de cada valor; o posto de uma amostra é dado de acordo com a posição na qual os dados de mesmo valor estão localizados na sequência crescente e a quantidade dos mesmos. Por exemplo, na ocasião o primeiro valor repetido é o número 4, o mesmo está localizado na posição 4 e 5 (sendo então duas repetições) da lista ordenada, então o posto do valor 4 será 
+$$
+\text{posto}_4 = \frac{4+5}{2} = 4.5
+$$
+o mesmo procedimento é feito para o valor 6, que se encontra na posição 7 e 8, logo:
+$$
+\text{posto}_6 = \frac{7+8}{2} = 7.5
+$$
+os demais valores irão assumir os postos de suas posições, sendo assim:  
+
+| **# ordem**  | **1** | **2** | **3** |  **4**  |  **4**  | **5** |  **6**  |  **6**  | **7** | **12** |
+|:-------------|:-----:|:-----:|:-----:|:-------:|:-------:|:-----:|:-------:|:-------:|:-----:|:------:|
+| **# postos** | **1** | **2** | **3** | **4.5** | **4.5** | **6** | **7.5** | **7.5** | **9** | **10** |
+
+
+**Passo 3** Agora deve-se atribuir o valor dos postos encontrados, em cada uma das amostras originais
+
+| **Placebo** |**Posto Pl** | **Novo Remédio** |**Posto NR** |
+|:-----------:|:-----------:|:----------------:|:-----------:|
+|      7      |       9 |         3        | 3|
+|      5      |       6 |         6        | 7.5|
+|      6      |       7.5 |         4        |4.5|
+|      4      |       4.5 |         2        |2|
+|      12     |       10 |         1        |1|
+
+**Passo 4** Agora somaremos o posto de cada uma das amostras
+$$
+R_{Pl} = 9 + 6 + 7.5 + 4.5 + 10 = 37\\
+R_{NR} = 3 + 7.5 + 4.5 + 2 + 1 = 18
+$$
+
+**Passo 5** Iremos calcular o valor de U, o que segue:
+
+Primeiro $U_{Pl}$
+$$
+U_{Pl} = n_{Pl} \cdot n_{NR} + \frac{n_{Pl}(n_{Pl}+1)}{2} - R_{Pl} \hspace{1cm} \therefore 
+$$
+$$
+U_{Pl} = 5 \cdot 5 + \frac{5(5+1)}{2} - 37 \hspace{.5cm} \Rightarrow \hspace{.5cm} U_{Pl} = 3 
+$$
+
+e agora $U_{NR}$
+$$
+U_{NR} = n_{Pl} \cdot n_{NR} + \frac{n_{NR}(n_{NR}+1)}{2} - R_{NR} \hspace{1cm} \therefore 
+$$
+
+$$
+U_{NR} = 5 \cdot 5 + \frac{5(5+1)}{2} - 18 \hspace{.5cm} \Rightarrow \hspace{.5cm} U_{NR} = 22 
+$$
+Com ambos os valores calculados, tomaremos o menor, sendo assim $U = 3$, como a amostra só tem 10 valores, podemos então olhar a tabela de valor critíco U de Mann Whitney, uma parte da mesma é apresentada na figura a seguir 
+
+```{r, echo=FALSE, out.width="70%", fig.align = 'center', fig.cap = "Parte da Tabela de Valores Críticos de U"}
+knitr::include_graphics("images/TabelaCriticalU.png")
+```
+
+Como nosso \(n_1 = 5, \ n_2 = 5\) e \(\alpha = 5\%\), temos \(U_{tabelado} = 2\); sendo o U calculado maior que o tabelado, \(2 < 3\), então a hipótese nula é aceita. 
+
+:::
+
+
+------------  
+
+**OBS:** O exercício foi retirado e adaptado do site [Mann-Whitney](https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_nonparametric/bs704_nonparametric4.html)
+
+Para automatizar o problema foi criada uma função em _Octave_ na qual é apresentada na sequência
+
+
+```{octave engine.path="C:/Program Files/GNU Octave/Octave-6.3.0/mingw64/bin/octave-cli-6.3.0.exe"}
+function testeU_MannWhitney(A,B)
+
+display('Dados fornecidos')
+display(A)
+display(B)
+
+nA = length(A);   %quantidade de observacoes em A
+nB = length(B);   %quantidade de observacoes em B
+
+n = nA+nB;        %quantidade de observacoes totais
+
+C = [A,B];        %vetor auxiliar
+C_cres = sort(C); %vetor auxiliar em ordem crescente
+
+%Pesos em A
+for k=1:nA
+  mA = find(C_cres == A(k));
+  pesoA(k) = sum(mA)/length(mA);
+end
+
+RA = sum(pesoA);
+
+%Pesos em B
+for k=1:nB
+  mB = find(C_cres == B(k));
+  pesoB(k) = sum(mB)/length(mB);
+end
+
+RB = sum(pesoB);
+
+for k=1:nA
+  if k == 1
+    fprintf('Valor A           rankA\n')
+  end
+  fprintf('%7.2f     %10.2f\n',A(k),pesoA(k))
+  if k==nA
+    fprintf('nA = %4.2f     RA = %5.2f\n\n',nA,RA)
+  end
+end
+
+for k=1:nB
+  if k == 1
+    fprintf('Valor B           rankB\n')
+  end
+  fprintf('%7.2f     %10.2f\n',B(k),pesoB(k))
+  if k==nB
+    fprintf('nB = %4.2f     RB = %5.2f\n\n',nB,RB)
+  end
+end
+
+%Estatistica para o teste de Mann Whitney
+UA = nA*nB + 0.5*(nA*(nA+1))-RA;
+UB = nA*nB + 0.5*(nB*(nB+1))-RB;
+fprintf('UA = %.2f   UB = %.2f\n',UA,UB)
+U = min(UA,UB);
+
+%Para n>20 usa-se a tabela da distribuicao normal
+if n>20
+  display('Use a Tabela normal')
+  mu_r = nA*nB/2;
+  sig_r = sqrt((nA*nB)*(nA+nB+1)/12);
+  z = (U-mu_r)/sig_r
+  
+%Para n<=20 usa-se a tabela de Valores Criticos de Mann-Whitney
+else
+  display('Use a Tabela de Mann-Whitney')
+  fprintf('Sendo o valor calculado de U = %.2f\n',U)
+end
+
+
+```
+Para o nosso exemplo então podemos definir `Pl = [7 5 6 4 12]`, `NR = [3 6 4 2 1]` e usar o comando `testeU_MannWhitney(A3,B3)`, o resultado obtido é apresentado na sequência
+
+```{octave engine.path="C:/Program Files/GNU Octave/Octave-6.3.0/mingw64/bin/octave-cli-6.3.0.exe", echo = FALSE}
+source("C:/Users/paulo/Documents/Octave/Probabilidade/testeU_MannWhitney.m")
+
+A3 = [7 5 6 4 12];
+B3 = [3 6 4 2 1];
+testeU_MannWhitney(A3,B3)
+```
+
+
+
+## Prova de Fischer
+
+<!-- # Footnotes and citations  -->
+
+<!-- ## Footnotes -->
+
+<!-- Footnotes are put inside the square brackets after a caret `^[]`. Like this one ^[This is a footnote.].  -->
+
+<!-- ## Citations -->
+
+<!-- Reference items in your bibliography file(s) using `@key`. -->
+
+<!-- For example, we are using the **bookdown** package [@R-bookdown] (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and **knitr** [@xie2015] (this citation was added manually in an external file book.bib).  -->
+<!-- Note that the `.bib` files need to be listed in the index.Rmd with the YAML `bibliography` key. -->
+
+
+<!-- The RStudio Visual Markdown Editor can also make it easier to insert citations: <https://rstudio.github.io/visual-markdown-editing/#/citations> -->
