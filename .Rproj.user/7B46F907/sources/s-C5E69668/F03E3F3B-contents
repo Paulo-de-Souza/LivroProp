@@ -47,5 +47,10 @@ Outro conceito que usualmente aparece, é o de **média ponderada**, neste caso 
 A **Variância** é um parâmetro que compara o quão distantes estão os valores de determinado grupo de dados com relação a média deste mesmo grupo. A mesma pode ser do tipo **Amostral** ou **Populacional** e a diferença fica mais explicita na equação que as definem.
 
 
+\begin{equation}
+s^2 =  \frac{1}{n-1}\sum_{i=1}^n(x_i - \bar{x})^2
+\end{equation}
+
+
 ### Desvio Padrão
 
