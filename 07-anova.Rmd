@@ -1,5 +1,6 @@
 # Três ou mais grupos Independentes e Paramétricos
 
+## Teste de Tuckey
 ## ANOVA de 1 ou 2 vias
 <!-- # Sharing your book -->
 

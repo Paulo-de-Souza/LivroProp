@@ -1,0 +1,15 @@
+# (PART) Testes de Normalidade {-}
+
+# Testes de Normalidade
+
+## Shapiro-Wilk
+
+
+## Kolmogorov - Smirnov
+
+ 
+## Anderson - Darling
+
+
+
+## Cramer Von-Mises

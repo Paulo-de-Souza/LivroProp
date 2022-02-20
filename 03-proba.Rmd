@@ -1,0 +1,33 @@
+# Probabilidade  
+
+Neste capítulo serão apresentados os seguintes tópicos:
+
+* Axiomas da Probabilidade
+* Análises Combinatórias
+* Distribuições de Probabilidade
+
+
+## Análise Combinatória
+
+
+## Distribuições de Probabilidade
+
+São diversos os tipos de distribuições para análise de dados  
+
+
+### Normal
+### T-de-Student
+### F de Fisher - Snedecor
+### Qui - Quadrado
+### Uniforme
+### Exponencial
+### Geométrica
+### Hipergeométrica
+### Bernoulli
+### Binomial 
+### Binomial - Negativa
+### Gama
+### Beta
+### Weidbull
+### Poisson
+### Pareto

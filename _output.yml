@@ -1,7 +1,8 @@
 bookdown::gitbook:
   css: style.css
+  split_by: section
   config:
-    toc:
+    toc: 
       before: |
         <li><a href="./">LivroProbabilidade</a></li>
       after: |

@@ -12,3 +12,67 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/*h1, h2, h3, h4 {
+  font-family: 'Prata', serif;
+  color: #2f5275;
+}
+*/
+
+/*Mudar a cor de fundo do sumario*/
+/*Muda a fonte do sumario*/
+.book .book-summary {
+    background-color: var(--main);
+    font-family: "Snell Roundhand", cursive;
+}
+
+
+/*Deixa em evidencia o menu selecionado*/
+.book .book-summary ul.summary li.active>a {
+    color: var(--lightgray);
+}
+
+/*Muda o espaçamento das palavras e as cores*/
+.book .book-summary ul.summary li a {
+    padding: 5px 5px 5px 5px;
+    color: var(--menu);
+}
+
+/*Muda a cor de acordo com a posicao do mouse*/
+.summary a:hover {
+  color: var(--main) !important;
+  background: var(--lightgray) !important;
+} 
+
+/*Muda a cor, espacamento e opacidade das PARTES*/
+li.appendix span, li.part span { /* for TOC part names */
+  margin-top: 1em;
+  color: var(--lightgray) !important;
+  opacity: 1 !important;
+  text-transform: uppercase;
+}
+
+
+
+/*Raiz referente as cores*/ 
+
+/*core da roma*/
+:root {
+    --main: #B5203D;
+    --brighter: #276db4;
+    --highlight: #F8972C;
+    --darkgray: #222222;
+    --gray: #cccccc;
+    --lightgray: #ebebeb;
+    --menu: #ffcc00;
+}
+
+/*:root {
+    --main: #6b7b8e;
+    --brighter: #276db4;
+    --highlight: #F8972C;
+    --darkgray: #222222;
+    --gray: #cccccc;
+    --lightgray: #8fbbaf;
+    --menu: #d6f8b8;
+}*/

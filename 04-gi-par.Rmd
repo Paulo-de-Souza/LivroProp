@@ -2,9 +2,11 @@
 
 # Dois Grupos Independentes e Paramétricos
 
-## Intervalo e limite de confiança
+## Intervalo e limite de confiança  
 
-## t de Student
+
+## t de Student  
+
 
 ## Comparação entre 2 proporções
 

@@ -203,7 +203,7 @@ end
 
 
 ```
-Para o nosso exemplo então podemos definir `Pl = [7 5 6 4 12]`, `NR = [3 6 4 2 1]` e usar o comando `testeU_MannWhitney(A3,B3)`, o resultado obtido é apresentado na sequência
+Para o nosso exemplo então podemos definir `Pl = [7 5 6 4 12]`, `NR = [3 6 4 2 1]` e usar o comando `testeU_MannWhitney(Pl,NR)`, o resultado obtido é apresentado na sequência
 
 ```{octave engine.path="C:/Program Files/GNU Octave/Octave-6.3.0/mingw64/bin/octave-cli-6.3.0.exe", echo = FALSE}
 source("C:/Users/paulo/Documents/Octave/Probabilidade/testeU_MannWhitney.m")

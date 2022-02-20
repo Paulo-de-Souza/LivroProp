@@ -1,5 +1,7 @@
-# Estatística e Probabilidade 
-Em probabilidade e estatística, existem diversos conceitos e axiomas que são fundamentais para o entendimento e a resolução dos problemas. Neste capítulo serão desenvolvidos os pontos que serão mais aplicados ao decorrer do mesmo, demais conceitos que sejam considerados extras, serão apenas indicados e referências para o estes ficarão a disposição.
+# Estatística
+Em probabilidade e estatística, existem diversos conceitos e axiomas que são fundamentais para o entendimento e a resolução dos problemas. Neste capítulo serão desenvolvidos os pontos que serão mais aplicados ao decorrer do livro, demais conceitos que sejam considerados extras, serão apenas indicados e referências para estes são deixadas a disposição.
+
+
 
 ## Conceitos Básicos de Estatística
 Entre os conceitos mais básicos da estatística, estão a **média, moda** e **mediana**, de forma direta a explicação de cada uma é dada na sequência
@@ -53,4 +55,10 @@ s^2 =  \frac{1}{n-1}\sum_{i=1}^n(x_i - \bar{x})^2
 
 
 ### Desvio Padrão
+
+
+
+
+
+
 

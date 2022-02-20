@@ -6,7 +6,7 @@
 ]{book}
 \title{Probabilidade e Estatística}
 \author{Paulo de Souza}
-\date{2022-02-19}
+\date{2022-02-20}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -229,10 +229,10 @@ Na linha 1 da tabela \ref{tab:CompAm} as abreviações \textbf{Int} e \textbf{li
 
 \textbf{Tipo não paramétrico}
 
-\hypertarget{estatuxedstica-e-probabilidade}{%
-\chapter{Estatística e Probabilidade}\label{estatuxedstica-e-probabilidade}}
+\hypertarget{estatuxedstica}{%
+\chapter{Estatística}\label{estatuxedstica}}
 
-Em probabilidade e estatística, existem diversos conceitos e axiomas que são fundamentais para o entendimento e a resolução dos problemas. Neste capítulo serão desenvolvidos os pontos que serão mais aplicados ao decorrer do mesmo, demais conceitos que sejam considerados extras, serão apenas indicados e referências para o estes ficarão a disposição.
+Em probabilidade e estatística, existem diversos conceitos e axiomas que são fundamentais para o entendimento e a resolução dos problemas. Neste capítulo serão desenvolvidos os pontos que serão mais aplicados ao decorrer do livro, demais conceitos que sejam considerados extras, serão apenas indicados e referências para estes são deixadas a disposição.
 
 \hypertarget{conceitos-buxe1sicos-de-estatuxedstica}{%
 \section{Conceitos Básicos de Estatística}\label{conceitos-buxe1sicos-de-estatuxedstica}}
@@ -295,6 +295,77 @@ s^2 =  \frac{1}{n-1}\sum_{i=1}^n(x_i - \bar{x})^2
 \hypertarget{desvio-padruxe3o}{%
 \subsection{Desvio Padrão}\label{desvio-padruxe3o}}
 
+\hypertarget{probabilidade}{%
+\chapter{Probabilidade}\label{probabilidade}}
+
+Neste capítulo serão apresentados os seguintes tópicos:
+
+\begin{itemize}
+\tightlist
+\item
+  Axiomas da Probabilidade
+\item
+  Análises Combinatórias
+\item
+  Distribuições de Probabilidade
+\end{itemize}
+
+\hypertarget{anuxe1lise-combinatuxf3ria}{%
+\section{Análise Combinatória}\label{anuxe1lise-combinatuxf3ria}}
+
+\hypertarget{distribuiuxe7uxf5es-de-probabilidade}{%
+\section{Distribuições de Probabilidade}\label{distribuiuxe7uxf5es-de-probabilidade}}
+
+São diversos os tipos de distribuições para análise de dados
+
+\hypertarget{normal}{%
+\subsection{Normal}\label{normal}}
+
+\hypertarget{t-de-student}{%
+\subsection{T-de-Student}\label{t-de-student}}
+
+\hypertarget{f-de-fisher---snedecor}{%
+\subsection{F de Fisher - Snedecor}\label{f-de-fisher---snedecor}}
+
+\hypertarget{qui---quadrado}{%
+\subsection{Qui - Quadrado}\label{qui---quadrado}}
+
+\hypertarget{uniforme}{%
+\subsection{Uniforme}\label{uniforme}}
+
+\hypertarget{exponencial}{%
+\subsection{Exponencial}\label{exponencial}}
+
+\hypertarget{geomuxe9trica}{%
+\subsection{Geométrica}\label{geomuxe9trica}}
+
+\hypertarget{hipergeomuxe9trica}{%
+\subsection{Hipergeométrica}\label{hipergeomuxe9trica}}
+
+\hypertarget{bernoulli}{%
+\subsection{Bernoulli}\label{bernoulli}}
+
+\hypertarget{binomial}{%
+\subsection{Binomial}\label{binomial}}
+
+\hypertarget{binomial---negativa}{%
+\subsection{Binomial - Negativa}\label{binomial---negativa}}
+
+\hypertarget{gama}{%
+\subsection{Gama}\label{gama}}
+
+\hypertarget{beta}{%
+\subsection{Beta}\label{beta}}
+
+\hypertarget{weidbull}{%
+\subsection{Weidbull}\label{weidbull}}
+
+\hypertarget{poisson}{%
+\subsection{Poisson}\label{poisson}}
+
+\hypertarget{pareto}{%
+\subsection{Pareto}\label{pareto}}
+
 \hypertarget{part-testes-amostrais}{%
 \part{Testes Amostrais}\label{part-testes-amostrais}}
 
@@ -304,8 +375,8 @@ s^2 =  \frac{1}{n-1}\sum_{i=1}^n(x_i - \bar{x})^2
 \hypertarget{intervalo-e-limite-de-confianuxe7a}{%
 \section{Intervalo e limite de confiança}\label{intervalo-e-limite-de-confianuxe7a}}
 
-\hypertarget{t-de-student}{%
-\section{t de Student}\label{t-de-student}}
+\hypertarget{t-de-student-1}{%
+\section{t de Student}\label{t-de-student-1}}
 
 \hypertarget{comparauxe7uxe3o-entre-2-proporuxe7uxf5es}{%
 \section{Comparação entre 2 proporções}\label{comparauxe7uxe3o-entre-2-proporuxe7uxf5es}}
@@ -556,7 +627,7 @@ Para automatizar o problema foi criada uma função em \emph{Octave} na qual é 
 \end{Highlighting}
 \end{Shaded}
 
-Para o nosso exemplo então podemos definir \texttt{Pl\ =\ {[}7\ 5\ 6\ 4\ 12{]}}, \texttt{NR\ =\ {[}3\ 6\ 4\ 2\ 1{]}} e usar o comando \texttt{testeU\_MannWhitney(A3,B3)}, o resultado obtido é apresentado na sequência
+Para o nosso exemplo então podemos definir \texttt{Pl\ =\ {[}7\ 5\ 6\ 4\ 12{]}}, \texttt{NR\ =\ {[}3\ 6\ 4\ 2\ 1{]}} e usar o comando \texttt{testeU\_MannWhitney(Pl,NR)}, o resultado obtido é apresentado na sequência
 
 \begin{verbatim}
 ## Dados fornecidos
@@ -610,8 +681,44 @@ Para o nosso exemplo então podemos definir \texttt{Pl\ =\ {[}7\ 5\ 6\ 4\ 12{]}}
 \hypertarget{truxeas-ou-mais-grupos-independentes-e-paramuxe9tricos}{%
 \chapter{Três ou mais grupos Independentes e Paramétricos}\label{truxeas-ou-mais-grupos-independentes-e-paramuxe9tricos}}
 
+\hypertarget{teste-de-tuckey}{%
+\section{Teste de Tuckey}\label{teste-de-tuckey}}
+
 \hypertarget{anova-de-1-ou-2-vias}{%
 \section{ANOVA de 1 ou 2 vias}\label{anova-de-1-ou-2-vias}}
+
+\hypertarget{part-testes-de-normalidade}{%
+\part{Testes de Normalidade}\label{part-testes-de-normalidade}}
+
+\hypertarget{testes-de-normalidade}{%
+\chapter{Testes de Normalidade}\label{testes-de-normalidade}}
+
+\hypertarget{shapiro-wilk}{%
+\section{Shapiro-Wilk}\label{shapiro-wilk}}
+
+\hypertarget{kolmogorov---smirnov}{%
+\section{Kolmogorov - Smirnov}\label{kolmogorov---smirnov}}
+
+\hypertarget{anderson---darling}{%
+\section{Anderson - Darling}\label{anderson---darling}}
+
+\hypertarget{cramer-von-mises}{%
+\section{Cramer Von-Mises}\label{cramer-von-mises}}
+
+\hypertarget{part-aca}{%
+\part{ACA}\label{part-aca}}
+
+\hypertarget{anuxe1lise-de-concorduxe2ncia-de-atributos}{%
+\chapter{Análise de Concordância de Atributos}\label{anuxe1lise-de-concorduxe2ncia-de-atributos}}
+
+\hypertarget{estuxe1tica-kappa}{%
+\chapter{Estática Kappa}\label{estuxe1tica-kappa}}
+
+\hypertarget{teste-kappa-de-cohen}{%
+\section{Teste Kappa de Cohen}\label{teste-kappa-de-cohen}}
+
+\hypertarget{teste-kappa-de-fleiss}{%
+\section{Teste Kappa de Fleiss}\label{teste-kappa-de-fleiss}}
 
   \bibliography{book.bib,packages.bib}
 
