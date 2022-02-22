@@ -6,7 +6,7 @@
 ]{book}
 \title{Probabilidade e Estatística}
 \author{Paulo de Souza}
-\date{2022-02-20}
+\date{2022-02-21}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -316,10 +316,60 @@ Neste capítulo serão apresentados os seguintes tópicos:
 \hypertarget{distribuiuxe7uxf5es-de-probabilidade}{%
 \section{Distribuições de Probabilidade}\label{distribuiuxe7uxf5es-de-probabilidade}}
 
-São diversos os tipos de distribuições para análise de dados
+São diversos os tipos de distribuições para análise de dados; as mesmas apresentam três características importantes, são elas:
+
+\begin{itemize}
+\tightlist
+\item
+  Função de Densidade de Probabilidade
+\item
+  Função de Densidade Acumulada
+\item
+  Função Percentil
+\end{itemize}
 
 \hypertarget{normal}{%
 \subsection{Normal}\label{normal}}
+
+A fórmula geral para a \textbf{Função Densidade de Probabilidade} de uma distribuição normal é
+
+\begin{equation}
+  f(x) =  \frac{1}{\sigma \sqrt{2 \pi}} e^{\frac{-(x-\mu)^2}{(2\sigma^2)}}
+\end{equation}
+
+Nos casos em que \(\mu = 0\) e \(\sigma = 1\), temos a chamada \textbf{função normal padrão}, costumeiramente representado por \(N(1,0)\). A equação anterior se reduz a:
+
+\begin{equation}
+  f(x) = \frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}}
+\end{equation}
+
+O seguinte gráfico é referente a função densidade de probabilidade padrão.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/normalpdf} 
+
+}
+
+\caption{Função Densidade de Probabilidade da Normal Padrão}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+A fórmula para o cálculo da \textbf{Função Densidade Acumulada} para uma distribuição normal padrão é dado por:
+
+\begin{equation}
+  F(x) = \int_{-\infty}^x \frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}}
+\end{equation}
+
+O seguinte gráfico representa os valores de densidade acumulada para uma distribuição normal padrão:
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/normalcdf} 
+
+}
+
+\caption{Função Densidade Acumulada da Normal Padrão}\label{fig:unnamed-chunk-2}
+\end{figure}
 
 \hypertarget{t-de-student}{%
 \subsection{T-de-Student}\label{t-de-student}}
@@ -542,7 +592,7 @@ Com ambos os valores calculados, tomaremos o menor, sendo assim \(U = 3\), como 
 
 }
 
-\caption{Parte da Tabela de Valores Críticos de U}\label{fig:unnamed-chunk-1}
+\caption{Parte da Tabela de Valores Críticos de U}\label{fig:unnamed-chunk-3}
 \end{figure}
 
 Como nosso \(n_1 = 5, \ n_2 = 5\) e \(\alpha = 5\%\), temos \(U_{tabelado} = 2\); sendo o U calculado maior que o tabelado, \(2 < 3\), então a hipótese nula é aceita.

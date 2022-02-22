@@ -30,7 +30,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Paulo de Souza" />
 
 
-<meta name="date" content="2022-02-20" />
+<meta name="date" content="2022-02-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -258,9 +258,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="distribuições-de-probabilidade" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Distribuições de Probabilidade</h2>
-<p>São diversos os tipos de distribuições para análise de dados</p>
+<p>São diversos os tipos de distribuições para análise de dados; as mesmas apresentam três características importantes, são elas:</p>
+<ul>
+<li>Função de Densidade de Probabilidade</li>
+<li>Função de Densidade Acumulada</li>
+<li>Função Percentil</li>
+</ul>
 <div id="normal" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Normal</h3>
+<p>A fórmula geral para a <strong>Função Densidade de Probabilidade</strong> de uma distribuição normal é</p>
+<p><span class="math display">\[\begin{equation}
+  f(x) =  \frac{1}{\sigma \sqrt{2 \pi}} e^{\frac{-(x-\mu)^2}{(2\sigma^2)}}
+\end{equation}\]</span></p>
+<p>Nos casos em que <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = 1\)</span>, temos a chamada <strong>função normal padrão</strong>, costumeiramente representado por <span class="math inline">\(N(1,0)\)</span>. A equação anterior se reduz a:</p>
+<p><span class="math display">\[\begin{equation}
+  f(x) = \frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}}
+\end{equation}\]</span></p>
+<p>O seguinte gráfico é referente a função densidade de probabilidade padrão.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="images/normalpdf.png" alt="Função Densidade de Probabilidade da Normal Padrão" width="80%" />
+<p class="caption">
+Figure 3.1: Função Densidade de Probabilidade da Normal Padrão
+</p>
+</div>
+<p>A fórmula para o cálculo da <strong>Função Densidade Acumulada</strong> para uma distribuição normal padrão é dado por:</p>
+<p><span class="math display">\[\begin{equation}
+  F(x) = \int_{-\infty}^x \frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}}
+\end{equation}\]</span></p>
+<p>O seguinte gráfico representa os valores de densidade acumulada para uma distribuição normal padrão:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="images/normalcdf.png" alt="Função Densidade Acumulada da Normal Padrão" width="80%" />
+<p class="caption">
+Figure 3.2: Função Densidade Acumulada da Normal Padrão
+</p>
+</div>
 </div>
 <div id="t-de-student" class="section level3" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> T-de-Student</h3>

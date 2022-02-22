@@ -23,7 +23,7 @@ pre code {
 /*Muda a fonte do sumario*/
 .book .book-summary {
     background-color: var(--main);
-    font-family: "Snell Roundhand", cursive;
+    /*font-family: "Snell Roundhand", cursive;*/
 }
 
 
