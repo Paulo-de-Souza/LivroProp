@@ -13,11 +13,11 @@ pre code {
   white-space: inherit;
 }
 
-/*h1, h2, h3, h4 {
-  font-family: 'Prata', serif;
-  color: #2f5275;
+h1, h2, h3, h4 {
+  /*font-family: 'Prata', serif;*/
+  color: var(--headers);
 }
-*/
+
 
 /*Mudar a cor de fundo do sumario*/
 /*Muda a fonte do sumario*/
@@ -56,8 +56,8 @@ li.appendix span, li.part span { /* for TOC part names */
 
 /*Raiz referente as cores*/ 
 
-/*core da roma*/
-:root {
+/*cores da roma*/
+/*:root {
     --main: #B5203D;
     --brighter: #276db4;
     --highlight: #F8972C;
@@ -65,14 +65,27 @@ li.appendix span, li.part span { /* for TOC part names */
     --gray: #cccccc;
     --lightgray: #ebebeb;
     --menu: #ffcc00;
-}
+}*/
 
-/*:root {
-    --main: #6b7b8e;
+:root {
+    --main: #001f33;
+    --lightgray: #EC6D2C;
+    --menu: #BBCBE2;
+    --headers: #32435D;
     --brighter: #276db4;
     --highlight: #F8972C;
     --darkgray: #222222;
     --gray: #cccccc;
-    --lightgray: #8fbbaf;
-    --menu: #d6f8b8;
+}
+
+
+/*:root {
+    --main: #001F33;            background
+    --lightgray: #8fbbaf;       cor fixa parte selecionada
+    --menu: #d6f8b8;            cor principal das palavras
+    --headers:                  cor dos titulos das seções/subseções
+    --brighter: #276db4;
+    --highlight: #F8972C;
+    --darkgray: #222222;
+    --gray: #cccccc;
 }*/

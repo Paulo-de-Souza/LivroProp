@@ -2,6 +2,17 @@
 
 # Introdução
 
+## Conceitos Principais
+
+**Grupos independentes**  
+
+**Grupos pareados**  
+
+**Tipo paramétrico**  
+
+**Tipo não paramétrico**
+
+
 ## Testes de Hipótese
 
 ### Hipósete nula e alternativa
@@ -37,13 +48,5 @@ Table: (\#tab:CompAm) Testes Para Comparação de Amostras
 Na linha 1 da tabela \@ref(tab:CompAm) as abreviações **Int** e **lim** significam **intervalo** e **limite**, respectivamente.
 
 
-## Significados Importantes
 
-**Grupos independentes**  
-
-**Grupos pareados**  
-
-**Tipo paramétrico**  
-
-**Tipo não paramétrico**
 

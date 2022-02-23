@@ -6,7 +6,7 @@
 ]{book}
 \title{Probabilidade e Estatística}
 \author{Paulo de Souza}
-\date{2022-02-21}
+\date{2022-02-22}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -158,6 +158,17 @@ O livro pode ser usado pelos entusiastas nos assuntos supracitados.
 \hypertarget{introduuxe7uxe3o}{%
 \chapter{Introdução}\label{introduuxe7uxe3o}}
 
+\hypertarget{conceitos-principais}{%
+\section{Conceitos Principais}\label{conceitos-principais}}
+
+\textbf{Grupos independentes}
+
+\textbf{Grupos pareados}
+
+\textbf{Tipo paramétrico}
+
+\textbf{Tipo não paramétrico}
+
 \hypertarget{testes-de-hipuxf3tese}{%
 \section{Testes de Hipótese}\label{testes-de-hipuxf3tese}}
 
@@ -217,17 +228,6 @@ Na Tabela abaixo são apresentados alguns dos principais testes de \textbf{Compa
 \end{longtable}
 
 Na linha 1 da tabela \ref{tab:CompAm} as abreviações \textbf{Int} e \textbf{lim} significam \textbf{intervalo} e \textbf{limite}, respectivamente.
-
-\hypertarget{significados-importantes}{%
-\section{Significados Importantes}\label{significados-importantes}}
-
-\textbf{Grupos independentes}
-
-\textbf{Grupos pareados}
-
-\textbf{Tipo paramétrico}
-
-\textbf{Tipo não paramétrico}
 
 \hypertarget{estatuxedstica}{%
 \chapter{Estatística}\label{estatuxedstica}}
@@ -316,22 +316,30 @@ Neste capítulo serão apresentados os seguintes tópicos:
 \hypertarget{distribuiuxe7uxf5es-de-probabilidade}{%
 \section{Distribuições de Probabilidade}\label{distribuiuxe7uxf5es-de-probabilidade}}
 
-São diversos os tipos de distribuições para análise de dados; as mesmas apresentam três características importantes, são elas:
+São diversos os tipos de distribuições para análise de dados, podendo ser separado em dois grupos, o de distribuições \textbf{discretas} e o de distribuições \textbf{contínuas}; as mesmas ainda apresentam características importantes, são algumas delas:
 
 \begin{itemize}
 \tightlist
 \item
-  Função de Densidade de Probabilidade
+  Função de Densidade de Probabilidade (\textbf{PDF})
 \item
-  Função de Densidade Acumulada
+  Função de Densidade Acumulada (\textbf{CDF})
 \item
-  Função Percentil
+  Função Percentil (\textbf{PPF})
+\item
+  Esperança e Variância da Distribuição (\textbf{E(x) e V(x)})
 \end{itemize}
+
+Na sequência são apresentadas variás dessas distribuições e suas características, além disso, é disposto implementações em \emph{Octave} para se obter resultados de estudo. Na próxima seção, é feita uma bateria de exemplos que mostram como aquelas são utilizadas.
 
 \hypertarget{normal}{%
 \subsection{Normal}\label{normal}}
 
-A fórmula geral para a \textbf{Função Densidade de Probabilidade} de uma distribuição normal é
+\hypertarget{densidade-de-probabilidade}{%
+\subsubsection*{Densidade de Probabilidade}\label{densidade-de-probabilidade}}
+\addcontentsline{toc}{subsubsection}{Densidade de Probabilidade}
+
+A fórmula geral para a \textbf{Função Densidade de Probabilidade} de uma \textbf{Distribuição Normal} é
 
 \begin{equation}
   f(x) =  \frac{1}{\sigma \sqrt{2 \pi}} e^{\frac{-(x-\mu)^2}{(2\sigma^2)}}
@@ -343,16 +351,20 @@ Nos casos em que \(\mu = 0\) e \(\sigma = 1\), temos a chamada \textbf{função 
   f(x) = \frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}}
 \end{equation}
 
-O seguinte gráfico é referente a função densidade de probabilidade padrão.
+O seguinte gráfico é referente a \textbf{PDF} da normal padrão.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.8\linewidth]{images/normalpdf} 
+{\centering \includegraphics[width=0.5\linewidth]{images/normalpdf} 
 
 }
 
 \caption{Função Densidade de Probabilidade da Normal Padrão}\label{fig:unnamed-chunk-1}
 \end{figure}
+
+\hypertarget{densidade-acumulada}{%
+\subsubsection*{Densidade Acumulada}\label{densidade-acumulada}}
+\addcontentsline{toc}{subsubsection}{Densidade Acumulada}
 
 A fórmula para o cálculo da \textbf{Função Densidade Acumulada} para uma distribuição normal padrão é dado por:
 
@@ -360,16 +372,95 @@ A fórmula para o cálculo da \textbf{Função Densidade Acumulada} para uma dis
   F(x) = \int_{-\infty}^x \frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}}
 \end{equation}
 
-O seguinte gráfico representa os valores de densidade acumulada para uma distribuição normal padrão:
+O seguinte gráfico representa os valores de \textbf{CDF} para uma distribuição normal padrão:
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.8\linewidth]{images/normalcdf} 
+{\centering \includegraphics[width=0.5\linewidth]{images/normalcdf} 
 
 }
 
 \caption{Função Densidade Acumulada da Normal Padrão}\label{fig:unnamed-chunk-2}
 \end{figure}
+
+\hypertarget{funuxe7uxe3o-percentil}{%
+\subsubsection*{Função Percentil}\label{funuxe7uxe3o-percentil}}
+\addcontentsline{toc}{subsubsection}{Função Percentil}
+
+Não existe uma forma fechada de se calcular a \textbf{função percentil} para a distribuição normal; no entanto sua interpretação é que dado um valor de probabilidade \(p\) obtêm-se o valor de \(x\), isto é, ela é a inversa da \textbf{CDF}. No gráfico a seguir é apresentada a \textbf{PPF} da distribuição normal padrão.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/normalppf} 
+
+}
+
+\caption{Função Percentil de Probabilidade da Normal Padrão}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\hypertarget{uniforme}{%
+\subsection{Uniforme}\label{uniforme}}
+
+\hypertarget{densidade-de-probabilidade-1}{%
+\subsubsection*{Densidade de Probabilidade}\label{densidade-de-probabilidade-1}}
+\addcontentsline{toc}{subsubsection}{Densidade de Probabilidade}
+
+A \textbf{Distribuição Uniforme} tem sua \textbf{Densidade de Probabilidade} dada por:
+
+\begin{equation}
+f(x) = \frac{1}{B-A} \hspace{2cm} A \leq x \leq B 
+\end{equation}
+
+Em que \(A\) é o parâmetro locação (ou desvio) e \(B-A\) é o parâmetro de escala. O gráfico a seguir mostra o caso em que \(A = 1\) e \(B = 3\).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/uniformepdf} 
+
+}
+
+\caption{Função Densidade de Probabilidade da Uniforme}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+Na ocasião em que \(A = 0\) e \(B = 1\), temos a chamada \textbf{distribuição uniforme padrão}, e a equação anterior se reduz a:
+
+\begin{equation}
+f(x) = 1 \hspace{2cm} 0 \leq x \leq 1
+\end{equation}
+
+O gráfico a seguir mostra a \textbf{PDF} da uniforme padrão.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/uniformepadraopdf} 
+
+}
+
+\caption{Função Percentil de Probabilidade da Normal Padrão}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\hypertarget{densidade-acumulada-1}{%
+\subsubsection*{Densidade Acumulada}\label{densidade-acumulada-1}}
+\addcontentsline{toc}{subsubsection}{Densidade Acumulada}
+
+A \textbf{Densidade Acumulada} para um distribuição normal padrão, é simplesmente:
+\begin{equation}
+  F(x) = x \hspace{2cm} 0 \leq x \leq 1
+\end{equation}
+
+O gráfico a seguir apresenta a curva da \textbf{CDF} para a normal padrão.
+
+\hypertarget{funuxe7uxe3o-percentil-1}{%
+\subsubsection*{Função Percentil}\label{funuxe7uxe3o-percentil-1}}
+\addcontentsline{toc}{subsubsection}{Função Percentil}
+
+A fórmula da \textbf{Função Percentil} para uma distribuição uniforme padrão é bem definida, e é expressa por:
+
+\begin{equation}
+  G(p) = p \hspace{2cm} 0 \leq p \leq 1
+\end{equation}
+
+O gráfico da \textbf{PPF} da uniforme padrão é apresentado a seguir:
 
 \hypertarget{t-de-student}{%
 \subsection{T-de-Student}\label{t-de-student}}
@@ -380,11 +471,11 @@ O seguinte gráfico representa os valores de densidade acumulada para uma distri
 \hypertarget{qui---quadrado}{%
 \subsection{Qui - Quadrado}\label{qui---quadrado}}
 
-\hypertarget{uniforme}{%
-\subsection{Uniforme}\label{uniforme}}
-
 \hypertarget{exponencial}{%
 \subsection{Exponencial}\label{exponencial}}
+
+\hypertarget{weidbull}{%
+\subsection{Weidbull}\label{weidbull}}
 
 \hypertarget{geomuxe9trica}{%
 \subsection{Geométrica}\label{geomuxe9trica}}
@@ -392,26 +483,87 @@ O seguinte gráfico representa os valores de densidade acumulada para uma distri
 \hypertarget{hipergeomuxe9trica}{%
 \subsection{Hipergeométrica}\label{hipergeomuxe9trica}}
 
-\hypertarget{bernoulli}{%
-\subsection{Bernoulli}\label{bernoulli}}
-
-\hypertarget{binomial}{%
-\subsection{Binomial}\label{binomial}}
-
-\hypertarget{binomial---negativa}{%
-\subsection{Binomial - Negativa}\label{binomial---negativa}}
-
 \hypertarget{gama}{%
 \subsection{Gama}\label{gama}}
 
 \hypertarget{beta}{%
 \subsection{Beta}\label{beta}}
 
-\hypertarget{weidbull}{%
-\subsection{Weidbull}\label{weidbull}}
+\hypertarget{bernoulli}{%
+\subsection{Bernoulli}\label{bernoulli}}
+
+\hypertarget{binomial}{%
+\subsection{Binomial}\label{binomial}}
+
+A \textbf{Distribuição Binomial} é um tipo de distribuição discreta, e uma decorrência dos ensaios de Bernoulli, quando o número de eventos \emph{sucesso} é maior do que 1.
+
+\hypertarget{densidade-de-probabilidade-2}{%
+\subsubsection*{Densidade de Probabilidade}\label{densidade-de-probabilidade-2}}
+\addcontentsline{toc}{subsubsection}{Densidade de Probabilidade}
+
+O cálculo referente a função \textbf{Densidade de Probabilidade} é dado pela função:
+
+\begin{equation}
+  f(x;p,n) = \binom{n}{x} (p)^x (1-p)^{n-x} 
+\end{equation}
+
+Em que
+
+\begin{itemize}
+\item
+  \(x\) é o número de vezes que o meu sucesso deve ocorrer, na ocasião \(x\) é um número inteiro positivo, isto é, \(x = 0, 1, 2, \cdots\);
+\item
+  \(p\) é a probabilidade do sucesso ocorrer uma única vez;
+\item
+  \(n\) quantidade de eventos avaliados.
+\end{itemize}
+
+Sendo ainda o termo \(\binom{n}{x}\) a \textbf{Combinação} \(C(n,x)\), calculada por:
+
+\[
+ C(n,x) = \binom{n}{x} = \frac{n!}{x!(n-x)!}
+\]
+
+\hypertarget{densidade-acumulada-2}{%
+\subsubsection*{Densidade Acumulada}\label{densidade-acumulada-2}}
+\addcontentsline{toc}{subsubsection}{Densidade Acumulada}
+
+\hypertarget{funuxe7uxe3o-percentil-2}{%
+\subsubsection*{Função Percentil}\label{funuxe7uxe3o-percentil-2}}
+\addcontentsline{toc}{subsubsection}{Função Percentil}
+
+\hypertarget{binomial---negativa}{%
+\subsection{Binomial - Negativa}\label{binomial---negativa}}
 
 \hypertarget{poisson}{%
 \subsection{Poisson}\label{poisson}}
+
+\hypertarget{densidade-de-probabilidade-3}{%
+\subsubsection*{Densidade de Probabilidade}\label{densidade-de-probabilidade-3}}
+\addcontentsline{toc}{subsubsection}{Densidade de Probabilidade}
+
+A \textbf{Distribuição de Poisson}, é um tipo de distribuição discreta que tem como função de probabilidade a seguinte equação
+
+\begin{equation}
+f(x,\lambda) = \frac{e^{-\lambda} \lambda^x}{x!}
+\end{equation}
+
+Em que
+
+\begin{itemize}
+\item
+  \(x\) é o número de ocorrências no estudo em questão, sendo este ainda um número inteiro não negativo, isto é, \(x = 0, 1, 2, \cdots\);
+\item
+  \(\lambda\) é o número esperado (médio) de ocorrências no intervalo de estudo.
+\end{itemize}
+
+\hypertarget{densidade-acumulada-3}{%
+\subsubsection*{Densidade Acumulada}\label{densidade-acumulada-3}}
+\addcontentsline{toc}{subsubsection}{Densidade Acumulada}
+
+\hypertarget{funuxe7uxe3o-percentil-3}{%
+\subsubsection*{Função Percentil}\label{funuxe7uxe3o-percentil-3}}
+\addcontentsline{toc}{subsubsection}{Função Percentil}
 
 \hypertarget{pareto}{%
 \subsection{Pareto}\label{pareto}}
@@ -592,7 +744,7 @@ Com ambos os valores calculados, tomaremos o menor, sendo assim \(U = 3\), como 
 
 }
 
-\caption{Parte da Tabela de Valores Críticos de U}\label{fig:unnamed-chunk-3}
+\caption{Parte da Tabela de Valores Críticos de U}\label{fig:unnamed-chunk-6}
 \end{figure}
 
 Como nosso \(n_1 = 5, \ n_2 = 5\) e \(\alpha = 5\%\), temos \(U_{tabelado} = 2\); sendo o U calculado maior que o tabelado, \(2 < 3\), então a hipótese nula é aceita.
