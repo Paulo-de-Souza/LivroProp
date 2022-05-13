@@ -30,7 +30,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Paulo de Souza" />
 
 
-<meta name="date" content="2022-02-23" />
+<meta name="date" content="2022-05-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -295,9 +295,48 @@ Portanto, a média das velocidades coletadas é <span class="math inline">\(\bar
 <div id="variância" class="section level3" number="2.1.4">
 <h3><span class="header-section-number">2.1.4</span> Variância</h3>
 <p>A <strong>Variância</strong> é um parâmetro que compara o quão distantes estão os valores de determinado grupo de dados com relação a média deste mesmo grupo. A mesma pode ser do tipo <strong>Amostral</strong> ou <strong>Populacional</strong> e a diferença fica mais explicita na equação que as definem.</p>
-<p><span class="math display">\[\begin{equation}
-s^2 =  \frac{1}{n-1}\sum_{i=1}^n(x_i - \bar{x})^2
+<p><strong>Variância Amostral</strong>
+<span class="math display">\[\begin{equation}
+s^2 =  \frac{1}{n-1}\sum_{i=1}^n(x_i - \bar{x})^2 = \frac{1}{n-1}\left[\sum x_i^2 - n \bar{x}^2 \right]
 \end{equation}\]</span></p>
+<p><strong>Variância Populacional</strong>
+<span class="math display">\[\begin{equation}
+\sigma^2 = \sum_{i=1}^N \frac{(x_i - \bar{\mu})^2}{N} = \frac{\sum x_i^2}{N} - \bar{\mu}^2  
+\end{equation}\]</span></p>
+<div id="demonstração-das-relações-de-variância" class="section level4" number="2.1.4.1">
+<h4><span class="header-section-number">2.1.4.1</span> Demonstração das relações de Variância</h4>
+<p>Seja a <strong>variância amostral</strong> dada pela relação inicial:
+<span class="math display">\[
+  s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1}
+  \]</span>
+vamos mostrar que a mesma pode ser escrita como sendo
+<span class="math display">\[
+  s^2 = \frac{1}{n-1} \left[\sum x_i^2 - n\bar{x}^2 \right]
+  \]</span></p>
+<div class="proof">
+<p><span id="unlabeled-div-2" class="proof"><em>Demonstração</em>. </span><span class="math display">\[\begin{align*}
+  s^2 &amp; = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1} \\
+      &amp; = \frac{\sum_{i=1}^n (x_i^2 -2x_i \bar{x} + \bar{x}^2)}{n-1} \\
+      &amp; = \frac{1}{n-1} \left(\sum x_i^2 - 2\sum x_i\bar{x} + \sum\bar{x}^2   \right) \\
+      &amp; = \frac{1}{n-1} \left[\sum x_i^2 - 2\sum x_i \left(\frac{1}{n} \sum x_i \right) + \sum \left(\frac{1}{n} \sum x_i \right)^2   \right] \\
+      &amp; = \frac{1}{n-1} \left[\sum x_i^2 - \frac{2}{n}\left(\sum x_i \right)^2 + n\left(\frac{1}{n}\right)^2 \left( \sum x_i \right)^2   \right]\\
+      &amp; = \frac{1}{n-1} \left[\sum x_i^2 - \frac{2n}{n^2}\left(\sum x_i \right)^2 + n\left(\frac{1}{n}\right)^2 \left( \sum x_i \right)^2   \right]\\
+      &amp; = \frac{1}{n-1} \left[\sum x_i^2 + \frac{1}{n^2}(n-2n)  \left( \sum x_i \right)^2   \right]\\
+      &amp; = \frac{1}{n-1} \left[\sum x_i^2 + \left(\frac{1}{n} \sum x_i \right)^2 (-n)  \right]\\
+      &amp; = \frac{1}{n-1} \left[\sum x_i^2 - n\bar{x}^2 \right]
+  \end{align*}\]</span></p>
+</div>
+<p>Para a <strong>Variância Populacional</strong> segue do resultado anterior</p>
+<div class="proof">
+<p><span id="unlabeled-div-3" class="proof"><em>Demonstração</em>. </span><span class="math display">\[\begin{align*}
+\sigma^2 &amp;= \frac{\sum_{i=1}^N (x_i - \bar{\mu})^2}{N} \\
+         &amp;= \frac{1}{N} \left[\sum x_i^2 - N \bar{\mu}^2 \right] \\
+         &amp;= \frac{\sum x_i^2}{N} - \bar{\mu}^2
+\end{align*}\]</span></p>
+</div>
+<p>Segue agora alguns exemplos da aplicação da variância.</p>
+<p>Os mesmos foram retirados da referência…</p>
+</div>
 </div>
 <div id="desvio-padrão" class="section level3" number="2.1.5">
 <h3><span class="header-section-number">2.1.5</span> Desvio Padrão</h3>

@@ -48,11 +48,55 @@ Outro conceito que usualmente aparece, é o de **média ponderada**, neste caso 
 ### Variância
 A **Variância** é um parâmetro que compara o quão distantes estão os valores de determinado grupo de dados com relação a média deste mesmo grupo. A mesma pode ser do tipo **Amostral** ou **Populacional** e a diferença fica mais explicita na equação que as definem.
 
-
+**Variância Amostral**
 \begin{equation}
-s^2 =  \frac{1}{n-1}\sum_{i=1}^n(x_i - \bar{x})^2
+s^2 =  \frac{1}{n-1}\sum_{i=1}^n(x_i - \bar{x})^2 = \frac{1}{n-1}\left[\sum x_i^2 - n \bar{x}^2 \right]
 \end{equation}
 
+**Variância Populacional**
+\begin{equation}
+\sigma^2 = \sum_{i=1}^N \frac{(x_i - \bar{\mu})^2}{N} = \frac{\sum x_i^2}{N} - \bar{\mu}^2  
+\end{equation}
+
+#### Demonstração das relações de Variância  
+
+Seja a **variância amostral** dada pela relação inicial:
+  $$
+  s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1}
+  $$
+vamos mostrar que a mesma pode ser escrita como sendo
+  $$
+  s^2 = \frac{1}{n-1} \left[\sum x_i^2 - n\bar{x}^2 \right]
+  $$
+
+
+::: {.proof}
+  \begin{align*}
+  s^2 & = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1} \\
+      & = \frac{\sum_{i=1}^n (x_i^2 -2x_i \bar{x} + \bar{x}^2)}{n-1} \\
+      & = \frac{1}{n-1} \left(\sum x_i^2 - 2\sum x_i\bar{x} + \sum\bar{x}^2   \right) \\
+      & = \frac{1}{n-1} \left[\sum x_i^2 - 2\sum x_i \left(\frac{1}{n} \sum x_i \right) + \sum \left(\frac{1}{n} \sum x_i \right)^2   \right] \\
+      & = \frac{1}{n-1} \left[\sum x_i^2 - \frac{2}{n}\left(\sum x_i \right)^2 + n\left(\frac{1}{n}\right)^2 \left( \sum x_i \right)^2   \right]\\
+      & = \frac{1}{n-1} \left[\sum x_i^2 - \frac{2n}{n^2}\left(\sum x_i \right)^2 + n\left(\frac{1}{n}\right)^2 \left( \sum x_i \right)^2   \right]\\
+      & = \frac{1}{n-1} \left[\sum x_i^2 + \frac{1}{n^2}(n-2n)  \left( \sum x_i \right)^2   \right]\\
+      & = \frac{1}{n-1} \left[\sum x_i^2 + \left(\frac{1}{n} \sum x_i \right)^2 (-n)  \right]\\
+      & = \frac{1}{n-1} \left[\sum x_i^2 - n\bar{x}^2 \right]
+  \end{align*}
+:::  
+
+Para a **Variância Populacional** segue do resultado anterior
+
+::: {.proof}
+\begin{align*}
+\sigma^2 &= \frac{\sum_{i=1}^N (x_i - \bar{\mu})^2}{N} \\
+         &= \frac{1}{N} \left[\sum x_i^2 - N \bar{\mu}^2 \right] \\
+         &= \frac{\sum x_i^2}{N} - \bar{\mu}^2
+\end{align*}
+:::  
+
+Segue agora alguns exemplos da aplicação da variância.  
+
+Os mesmos foram retirados da referência...
 
 ### Desvio Padrão
 
