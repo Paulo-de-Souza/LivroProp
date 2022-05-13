@@ -1,13 +1,5 @@
-Welcome! 
+Bem vindo!
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
+Este é um resumo referente a tópicos de Probabilidade e Estátitica, desenvolvido com a ferramenta *Bookdown*!
 
-This template provides a skeleton file structure that you can edit to create your book. 
-
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
-
-Additional resources:
-
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
-
-The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown
+Fique a vontade para ler o conteúdo do livro aqui: 
